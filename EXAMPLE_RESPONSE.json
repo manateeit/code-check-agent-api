@@ -1,0 +1,127 @@
+{
+  "form_name": "Code Check Form",
+  "location_information": {
+    "site_name": {
+      "value": null,
+      "source_url": null,
+      "source_quote": null,
+      "notes": null
+    },
+    "site_address": {
+      "value": "401 Biscayne Blvd",
+      "source_url": "https://documents.miamigov.com/WebLink/DocView.aspx?id=1408635",
+      "source_quote": null,
+      "notes": null
+    },
+    "city": {
+      "value": "Miami",
+      "source_url": "https://documents.miamigov.com/WebLink/DocView.aspx?id=1408635",
+      "source_quote": null,
+      "notes": null
+    },
+    "state": {
+      "value": "FL",
+      "source_url": "https://documents.miamigov.com/WebLink/DocView.aspx?id=1408635",
+      "source_quote": null,
+      "notes": null
+    },
+    "jurisdiction": {
+      "value": "City of Miami",
+      "source_url": "https://documents.miamigov.com/WebLink/DocView.aspx?id=1408635",
+      "source_quote": "jurisdiction: City of Miami",
+      "notes": "Zoning jurisdiction within the City of Miami, not Miami-Dade County."
+    },
+    "zoning": {
+      "value": "T6-8-O",
+      "source_url": "https://documents.miamigov.com/WebLink/DocView.aspx?id=1408635",
+      "source_quote": "Zoning: T6-8-O",
+      "notes": "Miami 21 zoning code - Urban Core Transect"
+    },
+    "municipal_website": {
+      "value": "https://www.miamigov.com/",
+      "source_url": "https://www.miamigov.com/",
+      "source_quote": null,
+      "notes": null
+    }
+  },
+  "wall_signs": {
+    "wall_signs_allowed": {
+      "value": true,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "Wall signs are a permitted sign type in urban Transects (T5, T6, D, C)",
+      "notes": null
+    },
+    "maximum_sf_allowed": {
+      "value": null,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Guide_to_Signage_Regulation.pdf",
+      "source_quote": "Maximum sign area varies by Transect and frontage",
+      "notes": "Exact calculation depends on building frontage length"
+    },
+    "illumination_restrictions": {
+      "value": "No illuminated sign is allowed within 100 feet of residential Transects.",
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "No illuminated sign is allowed within 100 feet of any T1, T3, T4‑R, T5‑R, or T6‑R property.",
+      "notes": "General illumination restrictions are prescribed in Article 10."
+    },
+    "can_project_above_roofline": {
+      "value": null,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "Attached parallel to the wall (not projecting beyond allowed projection limits).",
+      "notes": null
+    }
+  },
+  "freestanding_signs": {
+    "freestanding_signs_allowed": {
+      "value": true,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "Monument signs are permitted in specific Transects",
+      "notes": null
+    },
+    "max_height": {
+      "value": 7.0,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "Maximum height for monument signs: 7 feet",
+      "notes": "Height measured from average sidewalk elevation"
+    },
+    "max_area": {
+      "value": 32.0,
+      "source_url": "https://archive.miamigov.com/planning/docs/Sign_Regulations/Article_10_Miami_21.pdf",
+      "source_quote": "Maximum area: 32 square feet",
+      "notes": null
+    }
+  },
+  "permit_requirements": {
+    "permits_can_be_applied_via": {
+      "value": ["Online", "In-person"],
+      "source_url": "https://www.miamigov.com/Services/Building",
+      "source_quote": "Sign permits can be applied for online or at the Building Department",
+      "notes": null
+    },
+    "cost_of_permit": {
+      "value": "Varies based on sign type and square footage",
+      "source_url": "https://www.miamigov.com/Services/Building/Fees",
+      "source_quote": null,
+      "notes": "Contact Building Department for exact fee calculation"
+    },
+    "time_to_secure_permit": {
+      "value": "5-10 business days",
+      "source_url": "https://www.miamigov.com/Services/Building",
+      "source_quote": "Standard review time is 5-10 business days",
+      "notes": "Expedited review available for additional fee"
+    }
+  },
+  "variance_procedures": {
+    "variances_allowed": {
+      "value": true,
+      "source_url": "https://library.municode.com/fl/miami/codes/code_of_ordinances",
+      "source_quote": "Variances may be granted by the Board of Adjustment",
+      "notes": null
+    },
+    "board": {
+      "value": "Board of Adjustment",
+      "source_url": "https://www.miamigov.com/Government/Boards-Committees/Board-of-Adjustment",
+      "source_quote": null,
+      "notes": null
+    }
+  }
+}

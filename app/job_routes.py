@@ -25,7 +25,7 @@ router = APIRouter(prefix="/jobs", tags=["jobs"])
 )
 async def create_job(request: JobCreateRequest):
     """
-    Submit a new research job
+    Submit a new research job (Phase 3: Triggers Modal worker)
     
     **Authentication**: Requires X-API-Key header
     
@@ -33,13 +33,35 @@ async def create_job(request: JobCreateRequest):
     - address: US address to research (required)
     - llm_provider: LLM provider - 'openai' or 'gemini' (default: 'openai')
     
-    **Returns**: Job details with job_id and status
+    **Returns**: Job details with job_id and status='pending'
+    
+    **Phase 3**: Job is processed asynchronously by Modal worker.
+    Use GET /jobs/{job_id} to poll for status updates.
     """
     try:
+        # Create job record (status: pending)
         job = JobDB.create_job(
             address=request.address,
             llm_provider=request.llm_provider.value
         )
+        
+        # Trigger Modal worker asynchronously (Phase 3)
+        try:
+            import modal
+            
+            # Spawn Modal function (non-blocking)
+            process_fn = modal.Function.lookup("code-check-worker", "process_research_job")
+            process_fn.spawn(
+                job["id"],
+                request.address,
+                request.llm_provider.value
+            )
+            print(f"[API] Spawned Modal worker for job {job['id']}")
+            
+        except Exception as modal_error:
+            print(f"[API] Warning: Failed to spawn Modal worker: {modal_error}")
+            # Don't fail the request - job is created, can be processed manually
+            # In production, you might want to update job status to 'failed'
         
         return JobCreateResponse(
             job_id=job["id"],

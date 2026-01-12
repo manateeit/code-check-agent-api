@@ -15,7 +15,7 @@ requests>=2.31.0
 smartsheet-python-sdk==3.0.2
 
 # Database & Backend Services (Phase 1+)
-supabase==2.3.0
+supabase==2.0.3
 
 # Background Workers (Phase 3+)
 modal==0.63.0

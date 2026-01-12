@@ -56,10 +56,12 @@ def test_supabase_connection():
     """
     # Check environment variables are set
     supabase_url = os.getenv('SUPABASE_URL')
-    supabase_key = os.getenv('SUPABASE_KEY') or os.getenv('SUPABASE_SERVICE_KEY')
+    supabase_key = (os.getenv('SUPABASE_KEY') or 
+                    os.getenv('SUPABASE_SERVICE_KEY') or 
+                    os.getenv('SUPABASE_SERVICE_ROLE_KEY'))
     
     assert supabase_url, "SUPABASE_URL not set in environment"
-    assert supabase_key, "SUPABASE_KEY or SUPABASE_SERVICE_KEY not set in environment"
+    assert supabase_key, "SUPABASE_KEY, SUPABASE_SERVICE_KEY, or SUPABASE_SERVICE_ROLE_KEY not set in environment"
     assert not supabase_url.startswith('your-'), "SUPABASE_URL not configured (still has placeholder)"
     assert not supabase_key.startswith('your-'), "SUPABASE_KEY not configured (still has placeholder)"
     
@@ -112,7 +114,7 @@ def test_environment_variables():
     """
     required_vars = [
         'SUPABASE_URL',
-        ('SUPABASE_KEY', 'SUPABASE_SERVICE_KEY'),  # Either one is fine
+        ('SUPABASE_KEY', 'SUPABASE_SERVICE_KEY', 'SUPABASE_SERVICE_ROLE_KEY'),  # Any one is fine
         'PERPLEXITY_API_KEY',
         'OPENAI_API_KEY'
     ]
@@ -123,7 +125,7 @@ def test_environment_variables():
         if isinstance(var, tuple):
             # Check if any of the alternatives exist
             if not any(os.getenv(v) for v in var):
-                missing_vars.append(f"{var[0]} (or {var[1]})")
+                missing_vars.append(f"{var[0]} (or alternatives)")
         else:
             if not os.getenv(var):
                 missing_vars.append(var)

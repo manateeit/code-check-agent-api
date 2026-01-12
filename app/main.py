@@ -15,6 +15,7 @@ from .schemas import (
 from .models import CodeCheckForm
 from .agent import CodeCheckAgent
 from .smartsheet_exporter import export_to_smartsheet
+from . import job_routes
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -33,6 +34,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include job routes (Phase 2)
+app.include_router(job_routes.router)
 
 @app.get("/", tags=["Root"])
 async def root():
